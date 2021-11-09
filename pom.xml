@@ -12,7 +12,7 @@
 
     <groupId>com.kenfei.admin</groupId>
     <artifactId>admin-framework</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.6</version>
 
     <packaging>jar</packaging>
     <name>admin-framework</name>
@@ -25,22 +25,6 @@
             <url>https://maven.pkg.github.com/fillpit/admin-framework</url>
         </repository>
     </distributionManagement>
-
-    <repositories>
-        <!--指定 阿里云 中央仓库-->
-        <repository>
-            <id>nexus-aliyun</id>
-            <name>Nexus aliyun</name>
-            <layout>default</layout>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -101,10 +85,9 @@
         <resources>
             <!--如果pro和xml文件放在源码java包下，也需要编译-->
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
+                    <include>**/**</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

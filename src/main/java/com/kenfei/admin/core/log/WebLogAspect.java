@@ -22,7 +22,6 @@ import java.lang.reflect.Method;
  * @since 2019-05-20 14:18
  */
 @Aspect
-@Component
 @Profile({"dev", "test"})
 public class WebLogAspect {
   private static final Logger logger = LoggerFactory.getLogger(WebLogAspect.class);

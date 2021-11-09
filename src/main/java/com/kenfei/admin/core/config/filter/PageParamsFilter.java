@@ -1,4 +1,4 @@
-package com.kenfei.admin.core.config;
+package com.kenfei.admin.core.config.filter;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
@@ -18,9 +18,6 @@ import java.util.Set;
  * @author fei
  * @since 2019/10/30 17:09
  */
-
-@Component
-@WebFilter(urlPatterns = "/**", filterName = "ParamsFilter",dispatcherTypes=DispatcherType.REQUEST)
 public class PageParamsFilter implements Filter {
 
   @Override

@@ -5,6 +5,7 @@ import com.kenfei.admin.core.common.base.BaseEnum;
 import com.kenfei.admin.core.common.exception.DateConverterException;
 import com.kenfei.admin.core.config.resolvers.CustomerArgumentResolver;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
+import com.kenfei.admin.core.utils.SpringContextUtils;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,7 @@ import java.util.*;
  */
 @EnableAsync
 @RequiredArgsConstructor
-@Configuration("coreConfig")
+@Configuration(value = "coreConfig", proxyBeanMethods = false)
 @EnableConfigurationProperties({AppProperties.class})
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class MvcConfig implements WebMvcConfigurer {
@@ -48,6 +49,13 @@ public class MvcConfig implements WebMvcConfigurer {
 
   @Value("${app.location.source-url}")
   private String localSourceMapping;
+
+
+  @Bean
+  public SpringContextUtils springContextUtils(){
+    return new SpringContextUtils();
+  }
+
 
   /**
    * 静态资源映射
